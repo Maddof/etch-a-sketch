@@ -7,6 +7,17 @@ section {
     padding: 1rem 0;
 }
 
+#grid-button {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 2rem;
+}
+
+#info-paragraph {
+    display: block;
+    text-align: center;
+}
+
 #container {
     display: flex;
     flex-wrap: wrap;
