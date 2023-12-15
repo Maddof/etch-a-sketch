@@ -43,7 +43,24 @@ function changeGridDensity() {
 // Instead of only mouseover event, user also has to hold ctrlKey to sketch.
 
 container.addEventListener("mouseover", (e) => {
+  let repeater;
+  let opacity = 0.5;
   if (e.target.className === "created-div" && e.ctrlKey) {
-    e.target.classList.add("hover-color");
+    let targetDiv = e.target;
+    targetDiv.classList.add("hover-color");
+    //repeater = setInterval(bgColor, 100);
+
+    onmouseover = (e) => {
+      repeater = setInterval(bgColor, 100);
+    };
+
+    onmouseout = (e) => {
+      clearInterval(repeater);
+    };
+
+    function bgColor() {
+      opacity += 0.2;
+      e.target.style.background = `rgb(0, 0, 0, ${opacity})`;
+    }
   }
 });
